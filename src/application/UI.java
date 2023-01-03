@@ -1,7 +1,5 @@
 package application;
 
-import java.io.IOException;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import chess.ChessPiece;
@@ -31,6 +29,13 @@ public class UI {
 	public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
 	public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
 	//ADICIONAR O TRATAMENTO DE EXCEÇÕES COM O BLOCO TRY CATCH
+	
+	// https://stackoverflow.com/questions/2979383/java-clear-the-console
+	public static void clearScreen() {
+	 System.out.print("\033[H\033[2J");
+	 System.out.flush();
+	} 
+
 	public static ChessPosition readChessPosition(Scanner sc) {
 	
 			String s = sc.nextLine();
